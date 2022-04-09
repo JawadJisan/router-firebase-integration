@@ -27,11 +27,12 @@ const useFirebase = () => {
         .then(()=>{})
     }
 
+    // for get the current user information then user the information in different routes 
     useEffect(()=>{
         onAuthStateChanged(auth, user=>{
             setUser(user)
         })
-    })
+    },[])
     // return [user, setUser];
     return {user, signInWithGoogle, handleSignOut}
 
